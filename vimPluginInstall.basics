@@ -18,5 +18,40 @@ Install the following vim plugins
 1. indentLine
 2. ALE
 
-Install the following utilities
+Install the following utilities:
+---------------------------------------
 1. yamllint (pythong based linting utility, create a config file in ~/.config/yamllint/config path)
+2. sudo apt-get install nodejs  ( to make sure coc.vim works using LSP , language server protocol)
+  [ Possible issue while installing nodejs on LinuxMint  ]
+  {
+    Editing file /etc/apt/sources.list.d/additional-repositories.list and adding 
+    deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable worked for me, 
+    this post was very helpful https://github.com/typora/typora-issues/issues/2065
+  }
+3. 
+  vim8 , install coc.vim , which is basically an autocomplete
+  mkdir -p ~/.vim/pack/coc/start
+  cd ~/.vim/pack/coc/start
+  curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
+  :CocInstall coc-yaml 
+  :CocConfig
+  {
+  "languageserver": {
+      "golang": {
+        "command": "gopls",
+        "rootPatterns": ["go.mod"],
+        "filetypes": ["go"]
+      }
+  },
+
+  "yaml.schemas": {
+      "kubernetes": "/*.yaml"
+  }
+
+  }
+  kubernetes is a reserved field that tells the language server to load the Kubernetes schema URL from this constant variable. 
+  yaml.schemas can be expanded to add support for other schemas, check out the schema association docs for more details.
+
+  Add the yaml autocomplete shortcuts from https://github.com/neoclide/coc.nvim#example-vim-configuration
+
+  Modify autocomplete from TAB to <C-p>
