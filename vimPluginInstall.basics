@@ -1,0 +1,22 @@
+https://lwn.net/Articles/712648/  -- all about vim plugins
+
+Packages
+Managing Vim extensions used to require a separate plugin (such as pathogen) to be able to load other plugins automatically when the editor starts. Vim can now do this on its own. Users just need to move their plugins into a directory with their other configuration files. Vim 8 defines a new variable packpath, which points to $HOME/.vim/pack/*/start. This is now the default plugin directory for Vim. Plugins that use this directory structure will automatically be loaded at startup.
+
+The introduction of packpath also includes new commands to activate plugins manually after Vim starts:
+
+:packadd will add a plugin from packpath
+:packloadall will load all packages under packpath
+
+When Vim starts up, after processing your .vimrc, it scans all directories in
+'packpath' for plugins under the "pack/*/start" directory.  First all those
+directories are added to 'runtimepath'. 
+
+
+############    YAML Plugins for Vim ##########################
+Install the following vim plugins
+1. indentLine
+2. ALE
+
+Install the following utilities
+1. yamllint (pythong based linting utility, create a config file in ~/.config/yamllint/config path)
