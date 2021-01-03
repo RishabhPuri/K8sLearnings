@@ -13,25 +13,15 @@ When Vim starts up, after processing your .vimrc, it scans all directories in
 directories are added to 'runtimepath'. 
 
 
-############    YAML Plugins for Vim ##########################
+################################################    
+       YAML Plugins for Vim 
+################################################    
 Install the following vim plugins
 1. indentLine
 2. ALE
-
-Install the following utilities:
----------------------------------------
-1. yamllint (pythong based linting utility, create a config file in ~/.config/yamllint/config path)
-2. sudo apt-get install nodejs  ( to make sure coc.vim works using LSP , language server protocol)
-  [ Possible issue while installing nodejs on LinuxMint  ]
-  {
-    Editing file /etc/apt/sources.list.d/additional-repositories.list and adding 
-    deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable worked for me, 
-    this post was very helpful https://github.com/typora/typora-issues/issues/2065
-  }
-3. 
-  vim8 , install coc.vim , which is basically an autocomplete
-  mkdir -p ~/.vim/pack/coc/start
-  cd ~/.vim/pack/coc/start
+3. vim8 , install coc.vim , which is basically an autocomplete
+   mkdir -p ~/.vim/pack/coc/start
+   cd ~/.vim/pack/coc/start
   curl --fail -L https://github.com/neoclide/coc.nvim/archive/release.tar.gz|tar xzfv -
   :CocInstall coc-yaml 
   :CocConfig
@@ -55,3 +45,18 @@ Install the following utilities:
   Add the yaml autocomplete shortcuts from https://github.com/neoclide/coc.nvim#example-vim-configuration
 
   Modify autocomplete from TAB to <C-p>
+
+  Refer: https://octetz.com/docs/2020/2020-01-06-vim-k8s-yaml-support/
+
+################################################    
+    YAML utilities for Vim
+################################################    
+Install the following utilities:
+1. yamllint (pythong based linting utility, create a config file in ~/.config/yamllint/config path)
+2. sudo apt-get install nodejs  ( to make sure coc.vim works using LSP , language server protocol)
+  [ Possible issue while installing nodejs on LinuxMint  ]
+  {
+    Editing file /etc/apt/sources.list.d/additional-repositories.list and adding 
+    deb [arch=amd64] https://download.docker.com/linux/ubuntu xenial stable worked for me, 
+    this post was very helpful https://github.com/typora/typora-issues/issues/2065
+  }
