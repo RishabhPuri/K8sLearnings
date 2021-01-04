@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-app
+  labels:
+    name: nginx-2
+    type: frontend
+spec:
+  containers:
+  - name: nginx-app-container
+    image: nginx
+
